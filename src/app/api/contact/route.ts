@@ -19,7 +19,7 @@ export async function POST(req: Request) {
       from: 'Contact Form <onboarding@resend.dev>',
       to: ['ayeshamughal2162@gmail.com'],
       subject: `Contact: ${subject} (${inquiryType}) from ${name}`,
-      reply_to: email,
+      replyTo: email,
       html,
     });
     if (data.error) {
