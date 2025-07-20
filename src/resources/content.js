@@ -15,7 +15,7 @@ const person = {
 
 const newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  title: <>Subscribe to {person.firstName}&apos;s Newsletter</>,
   description: (
     <>
       I write about AI, modern development practices, and share insights about my journey in tech. 
@@ -71,8 +71,8 @@ const home = {
   },
   subline: (
     <>
-      I'm Ayesha, a <b>16-year-old</b> developer passionate about AI and innovative technology.
-      <br /> With 27+ certifications, I'm constantly learning and building new experiences.
+      I&apos;m Ayesha, a <b>16-year-old</b> developer passionate about AI and innovative technology.
+              <br /> With 27+ certifications, I&apos;m constantly learning and building new experiences.
     </>
   ),
 };
@@ -101,7 +101,7 @@ const about = {
         A passionate and persistent learner standing at the intersection of logic and creativity. 
         Currently delving into the intricacies of Agentic AI while maintaining a strong foundation 
         in modern development practices. With a flair for interaction, minimalism, and dark design, 
-        I don't just build code — I build experiences.
+        I don&apos;t just build code — I build experiences.
       </>
     ),
   },
@@ -157,7 +157,7 @@ const about = {
       {
         name: "Harvard CS50",
         description: <>
-          - CS50's Introduction to AI with Python Certification<br/>
+          - CS50&apos;s Introduction to AI with Python Certification<br/>
           - CS50x Puzzle Day Certificate with perfect 9/9 score<br/>
           - Demonstrated advanced problem-solving capabilities
         </>,
@@ -173,7 +173,7 @@ const about = {
       {
         name: "Additional Achievements",
         description: <>
-          - School's primary speaker for events and ceremonies<br/>
+          - School&apos;s primary speaker for events and ceremonies<br/>
           - Multiple academic competition participations<br/>
           - Perfect attendance record with consistent academic excellence
         </>,

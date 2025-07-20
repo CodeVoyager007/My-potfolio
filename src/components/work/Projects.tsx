@@ -2,6 +2,7 @@
 
 import { getPosts } from "@/app/utils/utils";
 import { Column } from "@once-ui-system/core";
+import Image from "next/image";
 import styles from "./Projects.module.scss";
 
 interface ProjectsProps {
@@ -95,7 +96,7 @@ export function Projects() {
       <div className={styles.projectsContainer}>
         {projects.map((project, index) => (
           <div key={project.title} className={`${styles.projectCard} ${styles.glow} ${styles.floating}`} style={{ animationDelay: `${index * 0.1}s` }}>
-            <img src={project.image} alt={project.title} className={styles.projectImage} />
+            <Image src={project.image} alt={project.title} width={400} height={300} className={styles.projectImage} />
             <h3 className={styles.projectTitle}>{project.title}</h3>
             <p className={styles.projectDescription}>{project.description}</p>
             <div className={styles.projectLinks}>
