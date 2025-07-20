@@ -1,0 +1,109 @@
+.contact-form-container {
+  background: var(--surface-background, #fff);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 2.5rem 2rem;
+  max-width: 480px;
+  margin: 0 auto;
+  border: 1.5px solid var(--brand-border-weak, var(--function-brand-200, #82F1FC));
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form-container::before {
+  display: none;
+}
+
+.contact-title {
+  color: var(--brand-background-strong, #049EE2);
+  font-size: 2.1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  z-index: 2;
+  position: relative;
+}
+
+.contact-subtitle {
+  color: var(--neutral-solid-medium, #757575);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 400;
+  z-index: 2;
+  position: relative;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  z-index: 2;
+  position: relative;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+}
+
+.input {
+  border: 1.2px solid var(--brand-border-weak, var(--function-brand-200, #82F1FC));
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  transition: box-shadow 0.18s, border-color 0.18s;
+  outline: none;
+  background: var(--surface-background, #fff);
+  width: 100%;
+  color: var(--neutral-solid-strong, #222);
+}
+
+.input:focus {
+  border-color: var(--brand-background-strong, #049EE2);
+  box-shadow: 0 0 0 2px var(--brand-background-strong, #049EE2);
+}
+
+.submit-btn {
+  background: var(--brand-background-strong, #049EE2);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.08rem;
+  border: none;
+  border-radius: 12px;
+  padding: 0.85rem 0;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.18s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  margin-top: 0.5rem;
+}
+
+.submit-btn:hover {
+  background: var(--brand-border-weak, var(--function-brand-200, #82F1FC));
+  color: var(--brand-background-strong, #049EE2);
+  transform: scale(1.02);
+}
+
+.success {
+  color: #27ae60;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.08rem;
+}
+
+.error {
+  color: #e74c3c;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.08rem;
+} 

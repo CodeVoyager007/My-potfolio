@@ -1,0 +1,156 @@
+.timeline {
+  position: relative;
+  padding: 40px 0;
+  width: 100%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background: var(--surface-default);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+}
+
+.timelineItem {
+  width: 100%;
+  margin-bottom: 60px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.learning .timelineDot {
+    background: var(--surface-brand);
+  }
+
+  &.foundation .timelineDot {
+    background: var(--surface-success);
+  }
+
+  &.achievement .timelineDot {
+    background: var(--surface-warning);
+  }
+}
+
+.timelineContent {
+  position: relative;
+  width: calc(50% - 30px);
+  background: var(--surface-default);
+  border: 1px solid var(--border-neutral-weak);
+  border-radius: var(--radius-l);
+  padding: var(--space-l);
+  margin-left: auto;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: -10px;
+    width: 20px;
+    height: 20px;
+    background: var(--surface-default);
+    border: 1px solid var(--border-neutral-weak);
+    transform: rotate(45deg);
+  }
+}
+
+.timelineItem:nth-child(even) .timelineContent {
+  margin-left: 0;
+  margin-right: auto;
+
+  &::before {
+    left: auto;
+    right: -10px;
+  }
+}
+
+.timelineDot {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+.date {
+  color: var(--text-brand);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.achievements {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 8px;
+
+    &::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--text-brand);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.skills {
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timelineContent {
+    width: calc(100% - 50px);
+    margin-left: 50px;
+
+    &::before {
+      left: -10px;
+    }
+  }
+
+  .timelineItem:nth-child(even) .timelineContent {
+    margin-left: 50px;
+    margin-right: 0;
+
+    &::before {
+      left: -10px;
+      right: auto;
+    }
+  }
+
+  .timelineDot {
+    left: 20px;
+  }
+} 
