@@ -6,9 +6,24 @@
   max-width: 1400px;
   margin: 0 auto;
   
+  // Tablet
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  // Mobile
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    gap: 1rem;
     padding: 1rem;
+  }
+  
+  // Small mobile
+  @media (max-width: 480px) {
+    padding: 0.5rem;
+    gap: 0.75rem;
   }
 }
 
@@ -22,6 +37,24 @@
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   overflow: hidden;
   
+  // Tablet
+  @media (max-width: 1024px) {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+  
+  // Mobile
+  @media (max-width: 768px) {
+    padding: 1.25rem;
+    border-radius: 12px;
+  }
+  
+  // Small mobile
+  @media (max-width: 480px) {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  
   &::before {
     content: '';
     position: absolute;
@@ -34,10 +67,15 @@
     pointer-events: none;
   }
 
-    &:hover {
+  &:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     border-color: rgba(255, 255, 255, 0.4);
+    
+    // Reduce hover effect on mobile
+    @media (max-width: 768px) {
+      transform: translateY(-5px) scale(1.01);
+    }
     
     &::before {
       left: 100%;
@@ -45,6 +83,10 @@
     
     .projectImage {
       transform: scale(1.1);
+      
+      @media (max-width: 768px) {
+        transform: scale(1.05);
+      }
     }
     
     .projectTitle {
@@ -69,6 +111,27 @@
   margin-bottom: 1.5rem;
   transition: transform 0.4s ease;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  
+  // Tablet
+  @media (max-width: 1024px) {
+    height: 220px;
+    border-radius: 12px;
+    margin-bottom: 1.25rem;
+  }
+  
+  // Mobile
+  @media (max-width: 768px) {
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  // Small mobile
+  @media (max-width: 480px) {
+    height: 180px;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+  }
 }
 
 .projectTitle {
@@ -81,6 +144,24 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  
+  // Tablet
+  @media (max-width: 1024px) {
+    font-size: 1.4rem;
+    margin-bottom: 0.875rem;
+  }
+  
+  // Mobile
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  // Small mobile
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+    margin-bottom: 0.625rem;
+  }
 }
 
 .projectDescription {
@@ -88,10 +169,33 @@
   line-height: 1.6;
   margin-bottom: 1.5rem;
   font-size: 0.95rem;
+  
+  // Tablet
+  @media (max-width: 1024px) {
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  // Mobile
+  @media (max-width: 768px) {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  
+  // Small mobile
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+    margin-bottom: 0.875rem;
+  }
 }
 
 .projectDetails {
   margin-bottom: 1.5rem;
+  
+  @media (max-width: 768px) {
+    margin-bottom: 1rem;
+  }
 }
 
 .detailsTitle {
@@ -101,12 +205,21 @@
   margin-bottom: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+  }
 }
 
 .featuresList {
   list-style: none;
   padding: 0;
   margin-bottom: 1.5rem;
+  
+  @media (max-width: 768px) {
+    margin-bottom: 1rem;
+  }
 }
 
 .featureItem {
@@ -116,6 +229,11 @@
   margin-bottom: 0.5rem;
   padding-left: 1.2rem;
   position: relative;
+  
+  @media (max-width: 768px) {
+    font-size: 0.85rem;
+    padding-left: 1rem;
+  }
   
   &::before {
     content: '▸';
@@ -131,6 +249,11 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
+  
+  @media (max-width: 768px) {
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .techTag {
@@ -143,16 +266,28 @@
   border: 1px solid rgba(100, 255, 218, 0.3);
   transition: all 0.3s ease;
   
+  @media (max-width: 768px) {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.75rem;
+    border-radius: 16px;
+  }
+  
   &:hover {
     background: rgba(100, 255, 218, 0.2);
     transform: translateY(-2px);
-        }
-    }
+  }
+}
 
 .projectLinks {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  
+  // Mobile - stack buttons vertically
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
 }
 
 .projectLink {
@@ -173,12 +308,37 @@
   position: relative;
   z-index: 10;
   
+  // Tablet
+  @media (max-width: 1024px) {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  // Mobile
+  @media (max-width: 768px) {
+    padding: 0.5rem 0.875rem;
+    font-size: 0.8rem;
+    border-radius: 20px;
+  }
+  
+  // Small mobile
+  @media (max-width: 480px) {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+  }
+  
   &:hover {
     transform: translateY(-2px);
     color: #00d4ff;
     background: rgba(100, 255, 218, 0.2);
     border-color: rgba(100, 255, 218, 0.5);
     box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
+    
+    @media (max-width: 768px) {
+      transform: translateY(-1px);
+    }
   }
   
   &:active {
@@ -204,6 +364,24 @@
   text-align: center;
   margin-bottom: 4rem;
   padding: 2rem;
+  
+  // Tablet
+  @media (max-width: 1024px) {
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+  }
+  
+  // Mobile
+  @media (max-width: 768px) {
+    margin-bottom: 2rem;
+    padding: 1rem;
+  }
+  
+  // Small mobile
+  @media (max-width: 480px) {
+    margin-bottom: 1.5rem;
+    padding: 0.75rem;
+  }
 }
 
 .title {
@@ -215,6 +393,23 @@
   background-clip: text;
   margin-bottom: 1rem;
   animation: gradientShift 3s ease-in-out infinite;
+  
+  // Tablet
+  @media (max-width: 1024px) {
+    font-size: 3rem;
+  }
+  
+  // Mobile
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+    margin-bottom: 0.875rem;
+  }
+  
+  // Small mobile
+  @media (max-width: 480px) {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
 }
 
 .subtitle {
@@ -223,6 +418,24 @@
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
+  
+  // Tablet
+  @media (max-width: 1024px) {
+    font-size: 1.1rem;
+    max-width: 500px;
+  }
+  
+  // Mobile
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    max-width: 100%;
+    line-height: 1.5;
+  }
+  
+  // Small mobile
+  @media (max-width: 480px) {
+    font-size: 0.95rem;
+  }
 }
 
 .stats {
@@ -231,6 +444,30 @@
   gap: 2rem;
   margin: 3rem 0;
   padding: 0 2rem;
+  
+  // Tablet
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+    padding: 0 1.5rem;
+  }
+  
+  // Mobile
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 0 1rem;
+  }
+  
+  // Small mobile
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+    padding: 0 0.5rem;
+  }
 }
 
 .stat {
@@ -241,8 +478,30 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: transform 0.3s ease;
   
+  // Tablet
+  @media (max-width: 1024px) {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  
+  // Mobile
+  @media (max-width: 768px) {
+    padding: 1.25rem;
+    border-radius: 10px;
+  }
+  
+  // Small mobile
+  @media (max-width: 480px) {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
   &:hover {
     transform: translateY(-5px);
+    
+    @media (max-width: 768px) {
+      transform: translateY(-3px);
+    }
   }
 }
 
@@ -251,6 +510,23 @@
   font-weight: 800;
   color: #64ffda;
   margin-bottom: 0.5rem;
+  
+  // Tablet
+  @media (max-width: 1024px) {
+    font-size: 2.25rem;
+  }
+  
+  // Mobile
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  // Small mobile
+  @media (max-width: 480px) {
+    font-size: 1.75rem;
+    margin-bottom: 0.3rem;
+  }
 }
 
 .statLabel {
@@ -258,6 +534,21 @@
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  
+  // Tablet
+  @media (max-width: 1024px) {
+    font-size: 0.85rem;
+  }
+  
+  // Mobile
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+  
+  // Small mobile
+  @media (max-width: 480px) {
+    font-size: 0.75rem;
+  }
 }
 
 @keyframes slideInLeft {

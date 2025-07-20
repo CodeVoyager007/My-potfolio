@@ -1,5 +1,6 @@
 import '@once-ui-system/core/css/styles.css';
 import '@once-ui-system/core/css/tokens.css';
+import './globals.css';
 
 import classNames from "classnames";
 import Head from "next/head";
@@ -27,6 +28,7 @@ export default async function RootLayout({
     <>
       <Head>
         <link rel="icon" href="/images/avatar.png" type="image/png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       </Head>
     <Flex
       suppressHydrationWarning
@@ -150,8 +152,26 @@ export default async function RootLayout({
               padding="l"
               horizontal="center"
               flex={1}
+              style={{
+                paddingLeft: 'var(--static-space-24)',
+                paddingRight: 'var(--static-space-24)',
+                '@media (max-width: 1024px)': {
+                  paddingLeft: 'var(--static-space-16)',
+                  paddingRight: 'var(--static-space-16)',
+                },
+                '@media (max-width: 768px)': {
+                  paddingLeft: 'var(--static-space-12)',
+                  paddingRight: 'var(--static-space-12)',
+                  paddingBottom: 'calc(var(--static-space-24) + 80px)', // Add space for fixed nav
+                },
+                '@media (max-width: 480px)': {
+                  paddingLeft: 'var(--static-space-8)',
+                  paddingRight: 'var(--static-space-8)',
+                  paddingBottom: 'calc(var(--static-space-16) + 80px)', // Add space for fixed nav
+                }
+              }}
             >
-              <Flex horizontal="center" fillWidth minHeight="0">
+              <Flex horizontal="center" fillWidth minHeight="0" style={{ maxWidth: '100%' }}>
                   {children}
               </Flex>
             </Flex>

@@ -63,16 +63,41 @@ export const Header = () => {
         position="unset"
         className={styles.position}
         as="header"
-        zIndex={9}
+        zIndex={1000}
         fillWidth
         padding="8"
         horizontal="center"
         data-border="rounded"
+        style={{
+          '@media (max-width: 768px)': {
+            position: 'fixed',
+            bottom: 0,
+            top: 'auto',
+            left: 0,
+            right: 0,
+            background: 'var(--page-background)',
+            borderTop: '1px solid var(--neutral-alpha-weak)',
+            boxShadow: '0 -2px 10px rgba(0, 0, 0, 0.1)',
+            zIndex: 1000,
+            display: 'flex',
+            visibility: 'visible',
+            opacity: 1
+          }
+        }}
       >
-        <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
+        <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s" style={{
+          '@media (max-width: 768px)': {
+            display: 'none'
+          }
+        }}>
           {display.location && <Flex hide="s">{person.location}</Flex>}
         </Flex>
-        <Flex fillWidth horizontal="center">
+        <Flex fillWidth horizontal="center" style={{
+          '@media (max-width: 768px)': {
+            justifyContent: 'center',
+            flex: 1
+          }
+        }}>
           <Flex
             background="page"
             border="neutral-alpha-weak"
@@ -81,12 +106,43 @@ export const Header = () => {
             padding="4"
             horizontal="center"
             zIndex={1}
+            style={{
+              '@media (max-width: 768px)': {
+                background: 'var(--surface-background)',
+                border: '1px solid var(--neutral-alpha-weak)',
+                borderRadius: '12px',
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+                padding: '8px',
+                gap: '4px'
+              }
+            }}
           >
-            <Flex gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
+            <Flex gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning style={{
+              '@media (max-width: 768px)': {
+                gap: '8px',
+                flexWrap: 'nowrap',
+                overflow: 'hidden'
+              }
+            }}>
               {routes["/"] && (
-                <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
+                <ToggleButton 
+                  prefixIcon="home" 
+                  href="/" 
+                  selected={pathname === "/"}
+                  style={{
+                    '@media (max-width: 768px)': {
+                      minWidth: '44px',
+                      minHeight: '44px',
+                      padding: '8px'
+                    }
+                  }}
+                />
               )}
-              <Line background="neutral-alpha-medium" vert maxHeight="24" />
+              <Line background="neutral-alpha-medium" vert maxHeight="24" style={{
+                '@media (max-width: 768px)': {
+                  display: 'none'
+                }
+              }} />
               {routes["/about"] && (
                 <>
                   <ToggleButton
@@ -101,6 +157,13 @@ export const Header = () => {
                     prefixIcon="person"
                     href="/about"
                     selected={pathname === "/about"}
+                    style={{
+                      '@media (max-width: 768px)': {
+                        minWidth: '44px',
+                        minHeight: '44px',
+                        padding: '8px'
+                      }
+                    }}
                   />
                 </>
               )}
@@ -118,6 +181,13 @@ export const Header = () => {
                     prefixIcon="grid"
                     href="/work"
                     selected={pathname.startsWith("/work")}
+                    style={{
+                      '@media (max-width: 768px)': {
+                        minWidth: '44px',
+                        minHeight: '44px',
+                        padding: '8px'
+                      }
+                    }}
                   />
                 </>
               )}
@@ -135,6 +205,13 @@ export const Header = () => {
                     prefixIcon="book"
                     href="/blog"
                     selected={pathname.startsWith("/blog")}
+                    style={{
+                      '@media (max-width: 768px)': {
+                        minWidth: '44px',
+                        minHeight: '44px',
+                        padding: '8px'
+                      }
+                    }}
                   />
                 </>
               )}
@@ -152,6 +229,13 @@ export const Header = () => {
                     prefixIcon="mail"
                     href="/contact"
                     selected={pathname.startsWith("/contact")}
+                    style={{
+                      '@media (max-width: 768px)': {
+                        minWidth: '44px',
+                        minHeight: '44px',
+                        padding: '8px'
+                      }
+                    }}
                   />
                 </>
               )}
@@ -169,19 +253,34 @@ export const Header = () => {
                     prefixIcon="timeline"
                     href="/journey"
                     selected={pathname.startsWith("/journey")}
+                    style={{
+                      '@media (max-width: 768px)': {
+                        minWidth: '44px',
+                        minHeight: '44px',
+                        padding: '8px'
+                      }
+                    }}
                   />
                 </>
               )}
               {display.themeSwitcher && (
                 <>
-                  <Line background="neutral-alpha-medium" vert maxHeight="24" />
+                  <Line background="neutral-alpha-medium" vert maxHeight="24" style={{
+                    '@media (max-width: 768px)': {
+                      display: 'none'
+                    }
+                  }} />
                   <ThemeToggle />
                 </>
               )}
             </Flex>
           </Flex>
         </Flex>
-        <Flex fillWidth horizontal="end" vertical="center">
+        <Flex fillWidth horizontal="end" vertical="center" style={{
+          '@media (max-width: 768px)': {
+            display: 'none'
+          }
+        }}>
           <Flex
             paddingRight="12"
             horizontal="end"
