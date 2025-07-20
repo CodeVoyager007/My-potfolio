@@ -125,7 +125,7 @@ export function Projects() {
       <div className={styles.header}>
         <h2 className={styles.title} style={{ fontSize: '2.5rem' }}>Ready to Collaborate?</h2>
         <p className={styles.subtitle}>
-          Let's create something amazing together. I'm always excited to work on new challenges and bring innovative ideas to life.
+          Let&apos;s create something amazing together. I&apos;m always excited to work on new challenges and bring innovative ideas to life.
         </p>
       </div>
     </div>

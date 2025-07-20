@@ -62,7 +62,7 @@ export default function ContactForm() {
       className={styles['contact-form-container']}
     >
       <h2 className={styles['contact-title']}>Contact Me</h2>
-      <p className={styles['contact-subtitle']}>I'd love to hear from you! Fill out the form and I'll get back to you soon.</p>
+      <p className={styles['contact-subtitle']}>I&apos;d love to hear from you! Fill out the form and I&apos;ll get back to you soon.</p>
       <form onSubmit={handleSubmit} className={styles['contact-form']}>
         <div className={styles['form-row']}>
           <input
